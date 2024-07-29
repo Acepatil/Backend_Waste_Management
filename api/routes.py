@@ -199,7 +199,7 @@ def get_all_images():
 
         # Use URL for the image
         if complaint.image_file:
-            image_url = f"{backend_URL}/{complaint.task_id}"  # Adjust the URL as needed
+            image_url = f"{backend_URL}/image/{complaint.task_id}"  # Adjust the URL as needed
             complaint_data["photo_url"] = image_url
         else:
             complaint_data["photo_url"] = None
@@ -258,7 +258,7 @@ def get_all_images_pen():
 
         # Use URL for the image
         if complaint.image_file:
-            image_url = f"http://localhost:8080/image/{complaint.task_id}"  # Adjust the URL as needed
+            image_url = f"{backend_URL}/image/{complaint.task_id}"  # Adjust the URL as needed
             complaint_data["photo_url"] = image_url
         else:
             complaint_data["photo_url"] = None
@@ -288,7 +288,7 @@ def get_all_images_comp():
 
         # Use URL for the image
         if complaint.image_file:
-            image_url = f"http://localhost:8080/image/{complaint.task_id}"  # Adjust the URL as needed
+            image_url = f"{backend_URL}/image/{complaint.task_id}"  # Adjust the URL as needed
             complaint_data["photo_url"] = image_url
         else:
             complaint_data["photo_url"] = None
