@@ -6,9 +6,9 @@ from io import BytesIO
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from datetime import timedelta
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 backend_URL=os.getenv('BACKEND_URL')
-
 
 @app.route('/create_all_tables')
 def create_tables():
