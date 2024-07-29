@@ -5,11 +5,10 @@ from api.otp_generation import send_mail
 from io import BytesIO
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from datetime import timedelta
-import random
+import os
 
-def create_otp():
-    ans=random.randint(10000,99999)
-    return ans
+backend_URL=os.getenv('BACKEND_URL')
+
 
 @app.route('/create_all_tables')
 def create_tables():
@@ -200,7 +199,7 @@ def get_all_images():
 
         # Use URL for the image
         if complaint.image_file:
-            image_url = f"http://localhost:8080/image/{complaint.task_id}"  # Adjust the URL as needed
+            image_url = f"{backend_URL}/{complaint.task_id}"  # Adjust the URL as needed
             complaint_data["photo_url"] = image_url
         else:
             complaint_data["photo_url"] = None
